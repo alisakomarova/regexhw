@@ -31,9 +31,13 @@ data = defaultdict(list)
 
 for info in contacts_list:
   key = tuple(info[:2])
+  # print(key)
   for item in info:
+    # print(item)
     if item not in data[key]:
-      data[key].append(item)
+      index=info.index(item)
+      # print(index)
+      data[key].insert(index,item)
 
 new_contact_list = list(data.values())
 pprint(new_contact_list)
